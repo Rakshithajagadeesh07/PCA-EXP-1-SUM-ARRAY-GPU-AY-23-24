@@ -977,6 +977,9 @@ int main(int argc, char **argv)
 
 
 ## RESULT:
+
+The experiment shows that GPU performance mainly depends on the number of threads used per block. When the thread count is close to 1023–1024, the GPU cores are utilized more efficiently and the kernel finishes faster. Using fewer or mid-range thread counts leads to higher execution time because the GPU cannot keep enough threads active and scheduling overhead becomes more noticeable. Therefore, for the Tesla T4 GPU from NVIDIA, a block size near 1024 threads provides the best overall performance.
+
 Thus, Implementation of sum arrays on host and device is done in nvcc cuda using random number.
 
 
